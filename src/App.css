@@ -1,0 +1,563 @@
+body { margin: 0; }
+
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.fundraise-page,
+.fundraise-page * { box-sizing: border-box; }
+
+.fundraise-page {
+  --navy: #002147;
+  --navy-light: #003153;
+  --green: #5fd58c;
+  --muted: #8ca2bc;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: white;
+}
+
+.fundraise-page button { font: inherit; cursor: pointer; }
+
+.fundraise-page a:focus-visible,
+.fundraise-page button:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 4px;
+}
+
+.fundraise-page .site {
+  position: relative;
+  width: 100%;
+  background: var(--navy);
+  color: white;
+  padding-bottom: 60px;
+}
+
+.fundraise-page .container {
+  width: min(100% - 80px, 1200px);
+  margin-inline: auto;
+}
+
+.fundraise-page .site-header {
+  width: 100%;
+  padding-block: 28px;
+  background: transparent;
+}
+
+.fundraise-page .header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(100% - 80px, 1200px);
+  margin-inline: auto;
+}
+
+.fundraise-page .brand-logo {
+  width: 44px;
+  height: auto;
+  display: block;
+}
+
+.fundraise-page .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.fundraise-page .nav-item {
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.fundraise-page .nav-item:hover {
+  color: var(--green);
+}
+
+.fundraise-page .hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  padding-block: 60px 80px;
+}
+
+.fundraise-page .hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.fundraise-page h1 {
+  margin: 0;
+  font-size: clamp(44px, 5.2vw, 68px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  text-align: center;
+}
+
+.fundraise-page h1 strong {
+  color: var(--green);
+  font-weight: 1000;
+  font-size: larger;
+}
+
+.fundraise-page .description {
+  margin: 24px auto 36px;
+  max-width: 520px;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: #e2ecf7;
+  text-align: center;
+}
+
+.fundraise-page .button.donate {
+  padding: 16px 36px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--green);
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.fundraise-page .button.donate:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.fundraise-page .hero-visual {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.fundraise-page .photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+  background: var(--navy-light);
+}
+
+.fundraise-page .photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.fundraise-page .total {
+  width: 100%;
+  padding: 28px 36px;
+  background: #ffffff;
+  color: var(--navy);
+  border-radius: 0 0 16px 16px;
+  border-top: 4px solid var(--green);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.fundraise-page .total p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+.fundraise-page .total strong {
+  display: block;
+  font-size: clamp(36px, 4vw, 50px);
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.fundraise-page .values-section {
+  padding: 80px 0;
+  background: #f4f8f7;
+  color: var(--navy);
+}
+
+.fundraise-page .section-intro {
+  max-width: 580px;
+  margin-bottom: 40px;
+}
+
+.fundraise-page .eyebrow {
+  margin: 0 0 18px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.fundraise-page h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: clamp(32px, 3.5vw, 42px);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -.7px;
+  color: var(--navy);
+}
+
+.fundraise-page .body-copy {
+  margin-top: 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.fundraise-page .values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.fundraise-page .value-card {
+  padding: 32px;
+  border: 1px solid #e2ebe7;
+  border-radius: 12px;
+  background: white;
+}
+
+.fundraise-page .value-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 24px;
+  border-radius: 50%;
+  background: #e4f8ec;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.fundraise-page .value-card h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.fundraise-page .value-card p {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.fundraise-page .credits {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 0;
+  padding: 32px 24px;
+  background: #f4f8f7;
+  border-top: 1px solid #e2ebe7;
+  color: var(--navy);
+  font-size: 15px;
+}
+
+.fundraise-page .credit-brand {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.fundraise-page .credit-mark { width: 25px; height: 27px; }
+
+.fundraise-page .credit-shot {
+  padding-left: 20px;
+  border-left: 1px solid #00214730;
+  font-weight: 300;
+}
+
+.fundraise-page .credit-shot strong { font-weight: 700; }
+.fundraise-page .credit-shot sup { font-size: .4em; }
+
+@media (max-width: 868px) {
+  .fundraise-page .container,
+  .fundraise-page .header-inner {
+    width: min(100% - 32px, 1200px);
+  }
+
+  .fundraise-page .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-block: 30px 50px;
+  }
+
+  .fundraise-page .description {
+    max-width: 100%;
+  }
+
+  .fundraise-page .values {
+    grid-template-columns: 1fr;
+  }
+}
+.donation-card {
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  border: 1px solid #e2ebe7;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.preset-amounts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.preset-btn {
+  padding: 10px;
+  border: 1px solid #e2ebe7;
+  border-radius: 6px;
+  background: #f4f8f7;
+  color: var(--navy);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.preset-btn.active,
+.preset-btn:hover {
+  background: var(--green);
+  border-color: var(--green);
+}
+
+.custom-amount-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.custom-amount-field label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.custom-amount-field input {
+  padding: 12px;
+  border: 1px solid #e2ebe7;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+}
+
+.card-input-wrapper {
+  padding: 14px;
+  border: 1px solid #e2ebe7;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  background: #f4f8f7;
+}
+
+.error-message {
+  color: #e53e3e;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.button-cancel {
+  padding: 12px 24px;
+  border: 1px solid #e2ebe7;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--navy);
+  font-weight: 600;
+  cursor: pointer;
+}
+.fundraise-page .card-input-wrapper {
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid #e2ebe7;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  background: #f4f8f7;
+  display: flex;
+  align-items: center;
+}
+
+.fundraise-page .card-input-wrapper .StripeElement {
+  width: 100%;
+}
+.fundraise-page .donation-card {
+  color: var(--navy);
+}
+
+.fundraise-page .success-view {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.fundraise-page .success-view h3 {
+  color: var(--navy);
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.fundraise-page .success-view p {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.hero-visual .total {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  color: #1a1f36;
+}
+
+.balance-summary-container h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1f36;
+  margin: 0 0 16px 0;
+  text-align: left;
+}
+
+.balance-bar-wrapper {
+  width: 100%;
+  height: 8px;
+  background-color: #e3e8ee;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.balance-bar-fill {
+  width: 100%;
+  height: 100%;
+  background-color: #00bcd4;
+  border-radius: 4px;
+}
+
+.balance-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.balance-table .table-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #697386;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e3e8ee;
+  font-weight: 600;
+}
+
+.balance-table .table-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #f7fafc;
+  font-size: 14px;
+}
+
+.balance-table .table-row:last-child {
+  border-bottom: none;
+}
+
+.balance-table .type-col {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #1a1f36;
+  font-weight: 500;
+}
+
+.balance-table .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.balance-table .dot-incoming {
+  background-color: #b0c4de;
+}
+
+.balance-table .dot-available {
+  background-color: #8a2be2;
+}
+
+.balance-table .dot-prefunding {
+  background-color: #00bcd4;
+}
+
+.balance-table strong {
+  font-weight: 700;
+  color: #1a1f36;
+}
+/* Modal card width & safety constraints */
+.fundraise-page .donation-card {
+  max-width: 480px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Constrain number input text */
+.fundraise-page .custom-amount-field input {
+  width: 100%;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Responsive actions layout */
+.fundraise-page .form-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+}
+
+.fundraise-page .form-actions .button.donate {
+  flex: 1;
+  min-width: 0; /* Allows button text truncation without breaking container */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fundraise-page .form-actions .button-cancel {
+  flex-shrink: 0;
+}

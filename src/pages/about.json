@@ -1,0 +1,20 @@
+{
+  "eyebrow": "About Me",
+  "name": "Tulabut, Harold Duane P.",
+  "academicYear": "BSIT 3-B",
+  "description": "Hello, my name is Harold Duane P. Tulabut from BSIT 3-B, this is my personal fundraiser website that is work in progress.",
+  "story": {
+    "eyebrow": "The Story",
+    "heading": "A Game Enjoyer\nand Future IT Professional",
+    "description2": [
+      "My current hobbies are playing games, watching esports, and darts. Some examples of games I'm currently playing are Deadlock, Dota 2, Tekken 8, Apex Legends, Genshin Impact, Umamusume, and more.",
+      "I am in my 3rd year of college pursuing IT in the Infrastructure track."
+    ],
+    "photo": {
+      "title": "Photo",
+      "alt": "Harold Duane P. Tulabut"
+    }
+  }
+}
+
+ 
