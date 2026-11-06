@@ -1,6 +1,4 @@
 import pfp from "../assets/pfp.jpg";
-import Header from "../components/header";
-import Footer from "../components/footer";
 import aboutData from "./about.json";
 import './about.css';
 
@@ -15,7 +13,7 @@ function About() {
               <h1 id="about-title">
                 {aboutData.name}
                 <br />
-                <span style={{ color: 'var(--green)', fontSize: '0.7em', display: 'block', marginTop: '10px' }}>
+                <span className="academic-year">
                   {aboutData.academicYear}
                 </span>
               </h1>

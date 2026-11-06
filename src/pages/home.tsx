@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
 import img from "../assets/images.jpg";
-import Header from "../components/header";
 import Card from "../components/card";
-import Footer from "../components/footer";
 import Donation from "./donation";
 import "../App.css";
 
 function Home() {
   const [isDonateOpen, setIsDonateOpen] = useState<boolean>(false);
+  const [donationAmount, setDonationAmount] = useState<string>("25");
   const [balance, setBalance] = useState<{ incoming: number; available: number } | null>(null);
 
   useEffect(() => {
@@ -82,7 +81,11 @@ function Home() {
             padding: "20px",
           }}
         >
-          <Donation onClose={() => setIsDonateOpen(false)} />
+          <Donation
+            amount={donationAmount}
+            onAmountChange={setDonationAmount}
+            onClose={() => setIsDonateOpen(false)}
+          />
         </div>
       )}
     </div>

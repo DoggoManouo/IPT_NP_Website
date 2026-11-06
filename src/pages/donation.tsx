@@ -7,13 +7,14 @@ const stripePromise = loadStripe(
 );
 
 interface DonationProps {
+  amount: string;
+  onAmountChange: (amount: string) => void;
   onClose?: () => void;
 }
 
-function DonationForm({ onClose }: DonationProps) {
+function DonationForm({ amount, onAmountChange, onClose }: DonationProps) {
   const stripe = useStripe();
   const elements = useElements();
-  const [amount, setAmount] = useState<string>("25");
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
@@ -118,7 +119,7 @@ function DonationForm({ onClose }: DonationProps) {
                 type="button"
                 key={preset}
                 className={`preset-btn ${amount === preset ? "active" : ""}`}
-                onClick={() => setAmount(preset)}
+                onClick={() => onAmountChange(preset)}
               >
                 ${preset}
               </button>
@@ -132,7 +133,7 @@ function DonationForm({ onClose }: DonationProps) {
               type="number"
               min="1"
               value={amount}
-              onChange={(e) => setAmount(e.target.value)}
+              onChange={(e) => onAmountChange(e.target.value)}
               required
             />
           </div>
@@ -175,10 +176,14 @@ function DonationForm({ onClose }: DonationProps) {
   );
 }
 
-export default function Donation({ onClose }: DonationProps) {
+export default function Donation({ amount, onAmountChange, onClose }: DonationProps) {
   return (
     <Elements stripe={stripePromise}>
-      <DonationForm onClose={onClose} />
+      <DonationForm
+        amount={amount}
+        onAmountChange={onAmountChange}
+        onClose={onClose}
+      />
     </Elements>
   );
 }

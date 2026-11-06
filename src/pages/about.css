@@ -19,9 +19,17 @@ body {
   --green: #5fd58c;
   --muted: #526478;
   min-height: 100vh;
-  font-family: "Poppins", sans-serif;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   color: var(--navy);
   background: white;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.about-page .site .container {
+  width: min(100% - 80px, 1120px);
+  margin-inline: auto;
 }
 
 .about-page a {
@@ -128,9 +136,11 @@ body {
 }
 
 .about-page .hero {
-  padding: 60px 0 80px;
+  position: relative;
+  padding: 72px 0 88px;
   background: var(--navy);
   color: white;
+  overflow: hidden;
 }
 
 .about-page .hero::after {
@@ -143,6 +153,26 @@ body {
   border: 2px solid #ffffff12;
   border-radius: 50%;
   pointer-events: none;
+}
+
+.about-page .hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.about-page .hero .eyebrow {
+  margin-bottom: 20px;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+}
+
+.about-page .academic-year {
+  display: block;
+  margin-top: 12px;
+  color: var(--green);
+  font-size: 0.52em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 .about-page .hero .subtitle {
   color: var(--green);
@@ -165,11 +195,6 @@ body {
   display: block;
 }
 
-.about-page .hero .container {
-  position: relative;
-  z-index: 1;
-}
-
 .about-page h1,
 .about-page h2,
 .about-page h3,
@@ -179,9 +204,9 @@ body {
 
 .about-page .eyebrow {
   margin: 0 0 18px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 2px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
 }
@@ -191,22 +216,23 @@ body {
 }
 
 .about-page h1 {
-  max-width: 760px;
-  margin-bottom: 24px;
-  color:#d3dfeb;
-  font-size: clamp(36px, 5vw, 60px);
-  font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: -1.5px;
+  max-width: 14ch;
+  margin-bottom: 22px;
+  color: #d3dfeb;
+  font-size: clamp(40px, 5.4vw, 68px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
 }
 
 .about-page .hero-description {
-  max-width: 570px;
+  max-width: 58ch;
   margin-bottom: 0;
   color: #d3dfeb;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1.8;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.75;
 }
 
 .about-page .story {
@@ -220,18 +246,21 @@ body {
 }
 
 .about-page h2 {
-  margin-bottom: 20px;
-  font-size: clamp(28px, 3vw, 38px);
-  font-weight: 600;
-  line-height: 1.25;
-  letter-spacing: -0.7px;
+  max-width: 18ch;
+  margin-bottom: 22px;
+  font-size: clamp(30px, 3.2vw, 42px);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.035em;
   color: var(--navy);
+  text-wrap: balance;
 }
 
 .about-page .body-copy {
   color: var(--muted);
-  font-size: 15px;
-  line-height: 1.9;
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 60ch;
 }
 
 .about-page .body-copy:last-child {
@@ -375,11 +404,10 @@ body {
   .about-page {
     padding: 0;
   }
-  
-.about-page .container {
-  width: min(100% - 64px, 1100px);
-  margin-inline: auto;
-}
+
+  .about-page .site .container {
+    width: min(100% - 40px, 640px);
+  }
 
   .about-page .header {
     width: 100%;
@@ -399,9 +427,17 @@ body {
 
   .about-page .story {
     grid-template-columns: 1fr;
-    gap: 32px;
-    padding-block: 48px;
-    width: calc(100% - 32px);
+    gap: 36px;
+    padding-block: 56px;
+    width: min(100% - 40px, 640px);
+  }
+
+  .about-page .hero {
+    padding-block: 56px 64px;
+  }
+
+  .about-page h1 {
+    font-size: clamp(38px, 9vw, 56px);
   }
 
   .about-page .mission {
