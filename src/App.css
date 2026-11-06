@@ -383,7 +383,9 @@ body { margin: 0; }
   font-size: 14px;
   margin-bottom: 16px;
 }
-
+.hero-title{
+  color: white;
+}
 .form-actions {
   display: flex;
   gap: 12px;

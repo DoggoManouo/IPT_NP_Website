@@ -9,7 +9,6 @@ function About() {
     <div className="about-page">
       <div className="site">
         <main>
-          {/* Hero Section */}
           <section className="hero" aria-labelledby="about-title">
             <div className="container">
               <p className="eyebrow">{aboutData.eyebrow}</p>
